@@ -1,0 +1,493 @@
+/* =====================================================
+   DOM PEDRO II ROBOTICS
+   STYLE.CSS
+   Tema inspirado em NASA | FIRST Robotics | Arduino
+====================================================== */
+
+/*=========================
+RESET
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#040814;
+
+    color:#fff;
+
+    overflow-x:hidden;
+
+}
+
+/*=========================
+VARIÁVEIS
+==========================*/
+
+:root{
+
+    --azul:#00bfff;
+
+    --ciano:#00ffff;
+
+    --roxo:#8b5cf6;
+
+    --branco:#ffffff;
+
+    --cinza:#d1d5db;
+
+    --glass:rgba(255,255,255,.08);
+
+    --glass2:rgba(255,255,255,.15);
+
+    --shadow:0 0 25px rgba(0,255,255,.25);
+
+}
+
+/*=========================
+FUNDO
+==========================*/
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+top:0;
+
+left:0;
+
+background:
+
+radial-gradient(circle at 20% 20%,rgba(0,255,255,.12),transparent 35%),
+
+radial-gradient(circle at 80% 10%,rgba(139,92,246,.15),transparent 40%),
+
+radial-gradient(circle at 50% 80%,rgba(0,191,255,.10),transparent 35%),
+
+linear-gradient(180deg,#020617,#050b19,#09152d);
+
+z-index:-3;
+
+}
+
+/*=========================
+PARTÍCULAS
+==========================*/
+
+#particles-js{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+z-index:-2;
+
+}
+
+/*=========================
+SCROLLBAR
+==========================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#07111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(var(--azul),var(--ciano));
+
+border-radius:30px;
+
+}
+
+/*=========================
+LOADER
+==========================*/
+
+#loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#010409;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+transition:1s;
+
+}
+
+.spinner{
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+border:6px solid rgba(255,255,255,.15);
+
+border-top:6px solid var(--ciano);
+
+animation:girar 1s linear infinite;
+
+margin-bottom:30px;
+
+}
+
+#loader h2{
+
+letter-spacing:5px;
+
+font-size:18px;
+
+color:white;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes girar{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes pulse{
+
+50%{
+
+opacity:.4;
+
+}
+
+}
+
+/*=========================
+NAVBAR
+==========================*/
+
+.navbar{
+
+background:rgba(0,0,0,.18);
+
+backdrop-filter:blur(18px);
+
+padding:20px;
+
+transition:.5s;
+
+}
+
+.navbar.scrolled{
+
+background:#020817;
+
+box-shadow:0 10px 35px rgba(0,0,0,.45);
+
+}
+
+.navbar-brand{
+
+font-weight:700;
+
+font-size:28px;
+
+color:white!important;
+
+}
+
+.navbar-brand i{
+
+color:var(--ciano);
+
+margin-right:10px;
+
+}
+
+.nav-link{
+
+color:white!important;
+
+font-weight:500;
+
+margin-left:20px;
+
+transition:.4s;
+
+}
+
+.nav-link:hover{
+
+color:var(--ciano)!important;
+
+text-shadow:0 0 15px var(--ciano);
+
+}
+
+/*=========================
+HERO
+==========================*/
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+overflow:hidden;
+
+background:url("../assets/imagens/hero.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.overlay{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(rgba(0,0,0,.65),rgba(2,6,23,.92));
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:10;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:80px;
+
+font-weight:800;
+
+line-height:1.1;
+
+text-shadow:0 0 40px rgba(0,255,255,.3);
+
+}
+
+.hero h1 span{
+
+display:block;
+
+color:var(--ciano);
+
+}
+
+.hero p{
+
+margin-top:25px;
+
+font-size:22px;
+
+color:#d7d7d7;
+
+}
+
+.hero .btn{
+
+margin-top:40px;
+
+padding:18px 45px;
+
+border-radius:50px;
+
+font-size:18px;
+
+font-weight:600;
+
+background:linear-gradient(45deg,var(--azul),var(--ciano));
+
+border:none;
+
+box-shadow:
+
+0 0 25px rgba(0,255,255,.35);
+
+transition:.4s;
+
+}
+
+.hero .btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+
+0 0 40px rgba(0,255,255,.8);
+
+}
+
+/*=========================
+GLASS CARD
+==========================*/
+
+.glass-card{
+
+background:var(--glass);
+
+border:1px solid rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+padding:35px;
+
+text-align:center;
+
+transition:.5s;
+
+box-shadow:var(--shadow);
+
+}
+
+.glass-card:hover{
+
+transform:translateY(-10px);
+
+background:var(--glass2);
+
+}
+
+/*=========================
+ESTATÍSTICAS
+==========================*/
+
+.stats{
+
+padding:120px 0;
+
+}
+
+.counter{
+
+font-size:55px;
+
+font-weight:700;
+
+color:var(--ciano);
+
+}
+
+.glass-card p{
+
+margin-top:10px;
+
+font-size:20px;
+
+}
+
+/*=========================
+ABOUT
+==========================*/
+
+.about{
+
+padding:120px 0;
+
+}
+
+.about h2{
+
+font-size:45px;
+
+margin-bottom:30px;
+
+}
+
+.about p{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#d5d5d5;
+
+max-width:900px;
+
+}
+
+/*=========================
+FOOTER
+==========================*/
+
+footer{
+
+padding:40px;
+
+background:#020817;
+
+text-align:center;
+
+color:#9ca3af;
+
+}
