@@ -74,17 +74,11 @@ header p {
   margin-bottom: 1.8rem;
 }
 
-/* Grid e Estilos do Card Clicável */
+/* Grid e Estilos dos Cards */
 .grid-projetos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.8rem;
-}
-
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
 }
 
 .card {
@@ -99,9 +93,14 @@ header p {
   justify-content: space-between;
 }
 
-.card-link:hover .card {
+.card:hover {
   transform: translateY(-5px);
-  border-color: #ff0000;
+  border-color: #38bdf8;
+}
+
+.capa-link {
+  text-decoration: none;
+  display: block;
 }
 
 /* Caixa preta central com ícone de Play */
@@ -117,6 +116,11 @@ header p {
   gap: 0.5rem;
   margin-bottom: 1rem;
   border: 2px dashed #ff0000;
+  transition: background-color 0.2s;
+}
+
+.capa-container:hover {
+  background-color: #111111;
 }
 
 .play-icon {
@@ -145,8 +149,10 @@ header p {
 
 .card-footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 0.8rem;
   border-top: 1px solid #334155;
   padding-top: 0.8rem;
   margin-top: auto;
@@ -161,20 +167,37 @@ header p {
   border-radius: 12px;
 }
 
-/* Botão Vermelho de Ação para o YouTube */
-.btn-youtube-acao {
-  background-color: #ff0000;
-  color: #ffffff !important;
-  font-weight: bold;
-  font-size: 0.8rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  display: inline-block;
-  transition: background-color 0.2s;
+/* Grupo de Botões */
+.botoes-grupo {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.card-link:hover .btn-youtube-acao {
-  background-color: #cc0000;
+.btn-acao {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+
+.btn-acao:hover {
+  opacity: 0.85;
+}
+
+/* Botão do PDF */
+.btn-pdf {
+  background-color: #0284c7;
+  color: #ffffff !important;
+}
+
+/* Botão do YouTube */
+.btn-youtube {
+  background-color: #ff0000;
+  color: #ffffff !important;
 }
 
 footer {
