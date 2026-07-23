@@ -11,36 +11,16 @@ const projetos = [
     tagTexto: "Arduino / SEED-PR",
     descricao: "Projeto com matriz de LED 8x8 programado pelos alunos da E.E. D. Pedro II para exibir emojis e expressões.",
     youtubeUrl: "https://youtube.com/shorts/Mmzw3JbQkEM"
-  },
-  {
-    id: 2,
-    titulo: "Carrinho Seguidor de Linha",
-    categoria: "robotica",
-    tagTexto: "Robótica / Arduino",
-    descricao: "Projeto de robótica com sensores infravermelhos para navegação autônoma em pistas.",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-  },
-  {
-    id: 3,
-    titulo: "Automação Residencial",
-    categoria: "iot",
-    tagTexto: "IoT / Programação",
-    descricao: "Controle de iluminação e sensores de presença acionados por código e conexão sem fio.",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   }
 ];
 
-function carregarProjetos(filtro = 'todos') {
+function carregarProjetos() {
   const containerGrid = document.getElementById('grid-projetos');
   if (!containerGrid) return;
 
   containerGrid.innerHTML = '';
 
-  const projetosFiltrados = filtro === 'todos' 
-    ? projetos 
-    : projetos.filter(p => p.categoria === filtro);
-
-  projetosFiltrados.forEach(projeto => {
+  projetos.forEach(projeto => {
     const cardHTML = `
       <a href="${projeto.youtubeUrl}" target="_blank" class="card-link">
         <div class="card">
@@ -65,17 +45,5 @@ function carregarProjetos(filtro = 'todos') {
   });
 }
 
-function filtrarProjetos(categoria) {
-  const botoes = document.querySelectorAll('.btn-filtro');
-  botoes.forEach(btn => btn.classList.remove('ativo'));
-  if (window.event && window.event.target) {
-    window.event.target.classList.add('ativo');
-  }
-
-  carregarProjetos(categoria);
-}
-
-// Carrega os projetos assim que a página é aberta
-document.addEventListener('DOMContentLoaded', () => {
-  carregarProjetos();
-});
+// Executa a função assim que o HTML terminar de carregar
+document.addEventListener('DOMContentLoaded', carregarProjetos);
