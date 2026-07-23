@@ -9,10 +9,11 @@ const projetos = [
     titulo: "Matriz de LED 8x8: Como estou me sentindo?",
     categoria: "robotica",
     tagTexto: "Arduino / SEED-PR",
-    descricao: "Projeto baseado na Aula 16 do material de Robótica da SEED-PR. Os alunos programaram uma matriz de LED 8x8 para desenhar e exibir como estão se sentindo.",
-    youtubeEmbedUrl: "https://www.youtube.com/embed/Mmzw3JbQkEM", 
-    youtubeUrlOriginal: "https://youtube.com/shorts/Mmzw3JbQkEM",
-    tutorialUrl: "https://aluno.escoladigital.pr.gov.br/sites/alunos/arquivos_restritos/files/documento/2023-04/aula16_como_estou_me_sentindo_ef_m2.pdf"
+    descricao: "Projeto com matriz de LED 8x8 programado pelos alunos da E.E. D. Pedro II para exibir emojis e expressões.",
+    // Capa da thumbnail oficial do Shorts no YouTube
+    imagemCapa: "https://img.youtube.com/vi/Mmzw3JbQkEM/hqdefault.jpg",
+    // Link direto para o vídeo no YouTube
+    youtubeUrl: "https://youtube.com/shorts/Mmzw3JbQkEM"
   },
   {
     id: 2,
@@ -20,9 +21,8 @@ const projetos = [
     categoria: "robotica",
     tagTexto: "Robótica / Arduino",
     descricao: "Projeto de robótica com sensores infravermelhos para navegação autônoma em pistas.",
-    youtubeEmbedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    youtubeUrlOriginal: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    tutorialUrl: "#"
+    imagemCapa: "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     id: 3,
@@ -30,9 +30,8 @@ const projetos = [
     categoria: "iot",
     tagTexto: "IoT / Programação",
     descricao: "Controle de iluminação e sensores de presença acionados por código e conexão sem fio.",
-    youtubeEmbedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    youtubeUrlOriginal: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    tutorialUrl: "#"
+    imagemCapa: "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   }
 ];
 
@@ -47,36 +46,27 @@ function carregarProjetos(filtro = 'todos') {
     : projetos.filter(p => p.categoria === filtro);
 
   projetosFiltrados.forEach(projeto => {
-    // Verifica se o projeto tem tutorial em PDF vinculado
-    const botaoTutorialHTML = projeto.tutorialUrl !== "#" 
-      ? `<a href="${projeto.tutorialUrl}" target="_blank" class="btn-tutorial">📄 Aula em PDF ↗</a>` 
-      : '';
-
+    // Aqui transformamos todo o quadradinho (card) num link direto para o YouTube
     const cardHTML = `
-      <div class="card">
-        <div class="video-container">
-          <iframe 
-            src="${projeto.youtubeEmbedUrl}" 
-            title="${projeto.titulo}" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
+      <a href="${projeto.youtubeUrl}" target="_blank" class="card-link">
+        <div class="card">
+          <div class="capa-container">
+            <img src="${projeto.imagemCapa}" alt="${projeto.titulo}" class="capa-projeto">
+            <div class="play-overlay">
+              <span>▶ Assistir no YouTube</span>
+            </div>
+          </div>
 
-        <div class="card-body">
-          <h3>${projeto.titulo}</h3>
-          <p>${projeto.descricao}</p>
-        </div>
+          <div class="card-body">
+            <h3>${projeto.titulo}</h3>
+            <p>${projeto.descricao}</p>
+          </div>
 
-        <div class="card-footer">
-          <span class="tag">${projeto.tagTexto}</span>
-          <div class="card-links">
-            <a href="${projeto.youtubeUrlOriginal}" target="_blank" class="btn-youtube">▶ Ver no YouTube</a>
-            ${botaoTutorialHTML}
+          <div class="card-footer">
+            <span class="tag">${projeto.tagTexto}</span>
           </div>
         </div>
-      </div>
+      </a>
     `;
     containerGrid.innerHTML += cardHTML;
   });

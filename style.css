@@ -1,6 +1,6 @@
 /* ==========================================================================
    DOM PEDRO II CONECTA - ESTILOS PRINCIPAIS (style.css)
-   Escola Estadual D. Pedro II - Janiópolis/PR (NRE Goioerê)
+   Escola Estadual D. Pedro II - Janiópolis/PR
    ========================================================================== */
 
 * {
@@ -13,7 +13,6 @@
 :root {
   --bg-principal: #0f172a;
   --bg-card: #1e293b;
-  --bg-hover: #334155;
   --texto-principal: #f8fafc;
   --texto-secundario: #94a3b8;
   --texto-suave: #64748b;
@@ -125,40 +124,75 @@ header p {
 
 .grid-projetos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.8rem;
+}
+
+/* Link que envolve todo o Quadradinho (Card) */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .card {
   background: var(--bg-card);
   border-radius: 12px;
-  padding: 1.2rem;
+  padding: 1rem;
   border: 1px solid var(--borda-card);
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border-color: var(--cor-destaque);
+.card-link:hover .card {
+  transform: translateY(-6px);
+  border-color: #ff0000; /* Borda vermelha indicando o YouTube ao passar o mouse */
+  box-shadow: 0 10px 20px -5px rgba(255, 0, 0, 0.2);
 }
 
-.video-container {
+.capa-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
+  height: 180px;
   border-radius: 8px;
+  overflow: hidden;
   margin-bottom: 1rem;
   background-color: #000;
 }
 
-.video-container iframe {
+.capa-projeto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-link:hover .capa-projeto {
+  transform: scale(1.05);
+}
+
+.play-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.play-overlay span {
+  background: #ff0000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .card-body h3 {
@@ -175,19 +209,9 @@ header p {
 }
 
 .card-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
   border-top: 1px solid var(--borda-card);
   padding-top: 0.8rem;
-}
-
-.card-links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  margin-top: auto;
 }
 
 .tag {
@@ -198,24 +222,7 @@ header p {
   font-weight: 600;
   padding: 0.25rem 0.6rem;
   border-radius: 12px;
-  align-self: flex-start;
 }
-
-.btn-youtube {
-  color: #ff4d4d;
-  font-weight: bold;
-  font-size: 0.8rem;
-  text-decoration: none;
-}
-
-.btn-tutorial {
-  color: var(--cor-destaque);
-  font-weight: bold;
-  font-size: 0.8rem;
-  text-decoration: none;
-}
-
-.btn-youtube:hover, .btn-tutorial:hover { text-decoration: underline; }
 
 footer {
   text-align: center;
