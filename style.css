@@ -1,8 +1,3 @@
-/* ==========================================================================
-   DOM PEDRO II CONECTA - ESTILOS PRINCIPAIS (style.css)
-   Escola Estadual D. Pedro II - Janiópolis/PR
-   ========================================================================== */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +14,6 @@ body {
   flex-direction: column;
 }
 
-/* --- CABEÇALHO --- */
 header {
   background: linear-gradient(135deg, #1e293b, #0f172a);
   padding: 2rem 1rem 2.5rem 1rem;
@@ -28,16 +22,11 @@ header {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
-.logo-container {
-  margin-bottom: 1.5rem;
-}
-
-/* Corrige a imagem gigante da escola no topo */
 .brasao-escola {
   max-width: 120px;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem auto;
 }
 
 .badge-escola {
@@ -50,7 +39,6 @@ header {
   border-radius: 20px;
   margin-bottom: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
 }
 
 header h1 {
@@ -70,10 +58,8 @@ header p {
   margin-top: 1rem;
   color: #64748b;
   font-size: 0.85rem;
-  font-weight: 500;
 }
 
-/* --- CONTEÚDO PRINCIPAL --- */
 .container {
   max-width: 1100px;
   width: 90%;
@@ -81,18 +67,14 @@ header p {
   flex: 1;
 }
 
-.topo-secao {
-  margin-bottom: 1.8rem;
-}
-
 .secao-titulo {
   border-left: 4px solid #38bdf8;
   padding-left: 0.8rem;
   font-size: 1.4rem;
-  color: #f8fafc;
+  margin-bottom: 1.8rem;
 }
 
-/* --- GRID E CARDS DOS PROJETOS --- */
+/* Grid e Estilos do Card Clicável */
 .grid-projetos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -110,7 +92,7 @@ header p {
   border-radius: 12px;
   padding: 1.2rem;
   border: 1px solid #334155;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -120,13 +102,12 @@ header p {
 .card-link:hover .card {
   transform: translateY(-5px);
   border-color: #ff0000;
-  box-shadow: 0 10px 20px -5px rgba(255, 0, 0, 0.2);
 }
 
-/* Caixa de destaque do YouTube no Card */
+/* Caixa preta central com ícone de Play */
 .capa-container {
   width: 100%;
-  height: 160px;
+  height: 150px;
   background: #000000;
   border-radius: 8px;
   display: flex;
@@ -136,17 +117,17 @@ header p {
   gap: 0.5rem;
   margin-bottom: 1rem;
   border: 2px dashed #ff0000;
-  color: #ffffff;
 }
 
 .play-icon {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: #ff0000;
 }
 
-.capa-container span {
+.texto-clique {
   font-size: 0.85rem;
   font-weight: bold;
+  color: #ffffff;
 }
 
 .card-body h3 {
@@ -180,13 +161,22 @@ header p {
   border-radius: 12px;
 }
 
-.btn-assistir {
-  color: #ff4d4d;
+/* Botão Vermelho de Ação para o YouTube */
+.btn-youtube-acao {
+  background-color: #ff0000;
+  color: #ffffff !important;
   font-weight: bold;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background-color 0.2s;
 }
 
-/* --- RODAPÉ --- */
+.card-link:hover .btn-youtube-acao {
+  background-color: #cc0000;
+}
+
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -204,15 +194,7 @@ footer {
   gap: 0.8rem;
 }
 
-/* Corrige a imagem gigante do rodapé */
-.brasao-footer {
-  max-width: 50px;
-  height: auto;
-  display: block;
-}
-
-/* Responsividade para Celulares */
-@media (max-width: 600px) {
-  header h1 { font-size: 1.8rem; }
-  .brasao-escola { max-width: 90px; }
+.brasao-footer { 
+  max-width: 50px; 
+  height: auto; 
 }
