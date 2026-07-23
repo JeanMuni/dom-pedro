@@ -3,7 +3,6 @@
    Escola Estadual D. Pedro II - Janiópolis/PR (NRE Goioerê)
    ========================================================================== */
 
-/* Resets e Configurações Globais */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,7 +19,6 @@
   --texto-suave: #64748b;
   --cor-destaque: #38bdf8;
   --cor-botao: #0284c7;
-  --cor-botao-hover: #0369a1;
   --borda-card: #334155;
   --sombreamento: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
@@ -34,7 +32,6 @@ body {
   flex-direction: column;
 }
 
-/* Header / Cabeçalho */
 header {
   background: linear-gradient(135deg, #1e293b, #0f172a);
   padding: 2rem 1rem 2.5rem 1rem;
@@ -43,12 +40,10 @@ header {
   box-shadow: var(--sombreamento);
 }
 
-.logo-container {
-  margin-bottom: 1.5rem;
-}
+.logo-container { margin-bottom: 1.5rem; }
 
 .brasao-escola {
-  max-width: 150px; /* Tamanho do brasão no cabeçalho */
+  max-width: 130px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -65,19 +60,17 @@ header {
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 header h1 {
   color: var(--cor-destaque);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
-  letter-spacing: -0.5px;
 }
 
 header p {
   color: var(--texto-secundario);
-  font-size: 1.1rem;
+  font-size: 1rem;
   max-width: 650px;
   margin: 0 auto;
 }
@@ -85,65 +78,116 @@ header p {
 .sub-info {
   margin-top: 1rem;
   color: var(--texto-suave);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
 }
 
-/* Container de Conteúdo */
 .container {
   max-width: 1100px;
   width: 90%;
-  margin: 2.5rem auto;
+  margin: 2rem auto;
   flex: 1;
+}
+
+.topo-secao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
 }
 
 .secao-titulo {
   border-left: 4px solid var(--cor-destaque);
   padding-left: 0.8rem;
-  margin-bottom: 1.8rem;
-  font-size: 1.5rem;
-  color: var(--texto-principal);
+  font-size: 1.4rem;
 }
 
-/* Grid de Projetos */
+.filtros-container { display: flex; gap: 0.5rem; }
+
+.btn-filtro {
+  background: var(--bg-card);
+  border: 1px solid var(--borda-card);
+  color: var(--texto-secundario);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.btn-filtro:hover, .btn-filtro.ativo {
+  background: var(--cor-botao);
+  color: #fff;
+  border-color: var(--cor-botao);
+}
+
 .grid-projetos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 1.8rem;
 }
 
-/* Cards dos Projetos */
 .card {
   background: var(--bg-card);
   border-radius: 12px;
-  padding: 1.8rem;
+  padding: 1.2rem;
   border: 1px solid var(--borda-card);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   border-color: var(--cor-destaque);
-  box-shadow: 0 12px 20px -5px rgba(56, 189, 248, 0.15);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background-color: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
 }
 
 .card-body h3 {
   color: var(--texto-principal);
-  font-size: 1.25rem;
-  margin-bottom: 0.6rem;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
 }
 
 .card-body p {
   color: var(--texto-secundario);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
 }
 
 .card-footer {
-  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-top: 1px solid var(--borda-card);
+  padding-top: 0.8rem;
+}
+
+.card-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .tag {
@@ -152,11 +196,27 @@ header p {
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.25rem 0.7rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 12px;
+  align-self: flex-start;
 }
 
-/* Rodapé */
+.btn-youtube {
+  color: #ff4d4d;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.btn-tutorial {
+  color: var(--cor-destaque);
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.btn-youtube:hover, .btn-tutorial:hover { text-decoration: underline; }
+
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -171,26 +231,12 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
-.brasao-footer {
-  max-width: 50px; /* Tamanho do brasão no rodapé */
-  height: auto;
-}
+.brasao-footer { max-width: 45px; height: auto; }
 
-/* Responsividade */
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-  header p {
-    font-size: 0.95rem;
-  }
-  .container {
-    margin: 1.5rem auto;
-  }
-  .brasao-escola {
-    max-width: 100px;
-  }
+  header h1 { font-size: 1.8rem; }
+  .brasao-escola { max-width: 100px; }
 }
