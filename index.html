@@ -1,51 +1,188 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dom Pedro II Conecta - C.E. Dom Pedro II</title>
-  <!-- Link para o arquivo CSS externo -->
-  <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Dom Pedro II Conecta - Robótica e Programação
+</title>
+
+
+<link rel="stylesheet" href="style.css">
+
+
 </head>
+
+
 <body>
 
-  <header>
-    <div class="logo-container">
-      <img src="IMG-20260723-WA0006.jpg" alt="Brasão da Escola Estadual D. Pedro II" class="brasao-escola">
-    </div>
-    <span class="badge-escola">Escola Estadual D. Pedro II - E.F.I.</span>
-    <h1>Dom Pedro II Conecta ⚡</h1>
-    <p>Mostra de Projetos de Programação e Robótica dos nossos alunos.</p>
-    <div class="sub-info">
-      Janiópolis - PR | Núcleo Regional de Educação de Goioerê
-    </div>
-  </header>
 
-  <main class="container">
-    <div class="topo-secao">
-      <h2 class="secao-titulo">Projetos em Destaque</h2>
-      
-      <!-- Filtros por Categoria -->
-      <div class="filtros-container">
-        <button class="btn-filtro ativo" onclick="filtrarProjetos('todos')">Todos</button>
-        <button class="btn-filtro" onclick="filtrarProjetos('robotica')">Robótica</button>
-        <button class="btn-filtro" onclick="filtrarProjetos('iot')">IoT</button>
-        <button class="btn-filtro" onclick="filtrarProjetos('maker')">Maker</button>
-      </div>
-    </div>
+<header>
 
-    <!-- Grid de projetos em formato de cards clicáveis (carregado via JavaScript) -->
-    <div class="grid-projetos" id="grid-projetos"></div>
-  </main>
 
-  <footer>
-    <div class="footer-content">
-      <img src="IMG-20260723-WA0006.jpg" alt="Brasão da Escola" class="brasao-footer">
-      <p>Escola Estadual D. Pedro II - E.F.I. — Janiópolis/PR • NRE Goioerê</p>
-    </div>
-  </footer>
+<div class="logo-container">
 
-  <!-- Importação do arquivo JavaScript externo (o ?v=3 força a atualização do navegador) -->
-  <script src="script.js?v=3"></script>
+<img 
+src="IMG-20260723-WA0006.jpg"
+alt="Brasão da Escola Estadual D. Pedro II"
+class="brasao-escola">
+
+</div>
+
+
+
+<span class="badge-escola">
+Escola Estadual D. Pedro II - E.F.I.
+</span>
+
+
+
+<h1>
+Dom Pedro II Conecta ⚡
+</h1>
+
+
+
+<p>
+Mostra de Projetos de Programação, Robótica e Tecnologia desenvolvidos pelos estudantes.
+</p>
+
+
+
+<div class="sub-info">
+
+Janiópolis - PR | Núcleo Regional de Educação de Goioerê
+
+</div>
+
+
+</header>
+
+
+
+
+
+<main class="container">
+
+
+<div class="topo-secao">
+
+
+<h2 class="secao-titulo">
+Projetos em Destaque
+</h2>
+
+
+
+<div class="filtros-container">
+
+
+<button 
+class="btn-filtro ativo"
+onclick="filtrarProjetos('todos')">
+
+Todos
+
+</button>
+
+
+
+<button 
+class="btn-filtro"
+onclick="filtrarProjetos('robotica')">
+
+Robótica
+
+</button>
+
+
+
+<button 
+class="btn-filtro"
+onclick="filtrarProjetos('iot')">
+
+IoT
+
+</button>
+
+
+
+<button 
+class="btn-filtro"
+onclick="filtrarProjetos('maker')">
+
+Maker
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div 
+class="grid-projetos"
+id="grid-projetos">
+
+</div>
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<footer>
+
+
+<div class="footer-content">
+
+
+<img 
+src="IMG-20260723-WA0006.jpg"
+alt="Brasão da Escola"
+class="brasao-footer">
+
+
+
+<p>
+
+Escola Estadual D. Pedro II - E.F.I.
+<br>
+Janiópolis/PR • NRE Goioerê
+
+</p>
+
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+<script src="script.js?v=5"></script>
+
+
 </body>
+
+
 </html>
