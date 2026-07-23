@@ -1,46 +1,81 @@
-{
+// ==========================================================================
+// DOM PEDRO II CONECTA - LÓGICA DO SITE (script.js)
+// Escola Estadual D. Pedro II - Janiópolis/PR
+// ==========================================================================
+
+const projetos = [
+  {
     id: 1,
-
-    titulo: "LED 8x8 - Mandando uma Mensagem",
-
+    titulo: "Matriz de LED 8x8: Como estou me sentindo?",
     categoria: "robotica",
+    tagTexto: "Arduino / SEED-PR",
+    descricao: "Projeto com matriz de LED 8x8 programado pelos alunos da E.E. D. Pedro II para exibir emojis e expressões.",
+    youtubeUrl: "https://youtube.com/shorts/Mmzw3JbQkEM"
+  },
+  {
+    id: 2,
+    titulo: "Carrinho Seguidor de Linha",
+    categoria: "robotica",
+    tagTexto: "Robótica / Arduino",
+    descricao: "Projeto de robótica com sensores infravermelhos para navegação autônoma em pistas.",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  {
+    id: 3,
+    titulo: "Automação Residencial",
+    categoria: "iot",
+    tagTexto: "IoT / Programação",
+    descricao: "Controle de iluminação e sensores de presença acionados por código e conexão sem fio.",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  }
+];
 
-    tagTexto: "Arduino / Matriz LED 8x8",
+function carregarProjetos(filtro = 'todos') {
+  const containerGrid = document.getElementById('grid-projetos');
+  if (!containerGrid) return;
 
-    descricao:
-    "Projeto desenvolvido pelos estudantes utilizando matriz de LED 8x8 para criação de mensagens luminosas através da programação e eletrônica.",
+  containerGrid.innerHTML = '';
 
+  const projetosFiltrados = filtro === 'todos' 
+    ? projetos 
+    : projetos.filter(p => p.categoria === filtro);
 
-    imagemCapa:
-    "https://img.youtube.com/vi/Mmzw3JbQkEM/hqdefault.jpg",
+  projetosFiltrados.forEach(projeto => {
+    const cardHTML = `
+      <a href="${projeto.youtubeUrl}" target="_blank" class="card-link">
+        <div class="card">
+          <div class="capa-container">
+            <div class="play-icon">▶</div>
+            <span>Clique para abrir no YouTube</span>
+          </div>
 
+          <div class="card-body">
+            <h3>${projeto.titulo}</h3>
+            <p>${projeto.descricao}</p>
+          </div>
 
-    youtubeUrl:
-    "https://youtube.com/shorts/Mmzw3JbQkEM",
+          <div class="card-footer">
+            <span class="tag">${projeto.tagTexto}</span>
+            <span class="btn-assistir">Ver no YouTube ↗</span>
+          </div>
+        </div>
+      </a>
+    `;
+    containerGrid.innerHTML += cardHTML;
+  });
+}
 
+function filtrarProjetos(categoria) {
+  const botoes = document.querySelectorAll('.btn-filtro');
+  botoes.forEach(btn => btn.classList.remove('ativo'));
+  if (window.event && window.event.target) {
+    window.event.target.classList.add('ativo');
+  }
 
-    tutorialUrl:
-    "https://aluno.escoladigital.pr.gov.br/sites/alunos/arquivos_restritos/files/documento/2023-04/aula16_como_estou_me_sentindo_ef_m2.pdf"
-},
-<div class="botoes-projeto">
+  carregarProjetos(categoria);
+}
 
-<a 
-href="${projeto.youtubeUrl}"
-target="_blank"
-class="btn-youtube">
-
-▶ Ver Projeto
-
-</a>
-
-
-<a 
-href="${projeto.tutorialUrl}"
-target="_blank"
-class="btn-tutorial">
-
-🔧 Tutorial
-
-</a>
-
-</div>
+// Carrega os projetos assim que a página é aberta
+document.addEventListener('DOMContentLoaded', () => {
+  carregarProjetos();
+});
