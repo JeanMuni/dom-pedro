@@ -1,556 +1,33 @@
-/* ==========================================================================
-   DOM PEDRO II CONECTA - STYLE.CSS
-   Robótica • Programação • Tecnologia
-   ========================================================================== */
-
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Estilo do Card Clicável e Caixa de Vídeo */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
-
-
-:root {
-
-  --bg-principal: #020617;
-  --bg-card: rgba(30,41,59,0.85);
-  --texto: #f8fafc;
-  --texto-secundario: #94a3b8;
-  --azul: #38bdf8;
-  --azul-botao: #0284c7;
-  --borda: #334155;
-
-}
-
-
-
-body {
-
-  background: var(--bg-principal);
-  color: var(--texto);
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-
-}
-
-
-
-/* ================= HEADER ================= */
-
-
-header {
-
-background:
-linear-gradient(135deg,#1e293b,#020617);
-
-text-align:center;
-
-padding:40px 20px;
-
-border-bottom:3px solid var(--azul);
-
-box-shadow:0 10px 30px rgba(0,0,0,.4);
-
-}
-
-
-
-.logo-container {
-
-margin-bottom:20px;
-
-}
-
-
-
-.brasao-escola {
-
-width:130px;
-
-}
-
-
-
-.badge-escola {
-
-display:inline-block;
-
-background:#0284c7;
-
-padding:8px 18px;
-
-border-radius:30px;
-
-font-size:.85rem;
-
-font-weight:bold;
-
-}
-
-
-
-header h1 {
-
-color:var(--azul);
-
-font-size:2.5rem;
-
-margin:15px 0;
-
-}
-
-
-
-header p {
-
-color:var(--texto-secundario);
-
-}
-
-
-
-
-
-.sub-info {
-
-margin-top:15px;
-
-color:#64748b;
-
-}
-
-
-
-
-
-/* ================= CONTAINER ================= */
-
-
-.container {
-
-width:90%;
-
-max-width:1200px;
-
-margin:40px auto;
-
-flex:1;
-
-}
-
-
-
-
-.topo-secao {
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-flex-wrap:wrap;
-
-gap:20px;
-
-}
-
-
-
-.secao-titulo {
-
-border-left:5px solid var(--azul);
-
-padding-left:15px;
-
-}
-
-
-
-
-/* ================= FILTROS ================= */
-
-
-.filtros-container {
-
-display:flex;
-
-gap:10px;
-
-}
-
-
-
-.btn-filtro {
-
-
-background:#1e293b;
-
-border:1px solid var(--borda);
-
-color:white;
-
-padding:8px 18px;
-
-border-radius:20px;
-
-cursor:pointer;
-
-}
-
-
-
-.btn-filtro:hover,
-.btn-filtro.ativo {
-
-
-background:#0284c7;
-
-}
-
-
-
-/* ================= GRID ================= */
-
 
 .grid-projetos {
-
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
-gap:25px;
-
-margin-top:35px;
-
-
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
 }
-
-
-
-
-/* ================= CARD ================= */
-
 
 .card {
-
-
-background:var(--bg-card);
-
-border:1px solid var(--borda);
-
-border-radius:20px;
-
-padding:18px;
-
-backdrop-filter:blur(10px);
-
-transition:.3s;
-
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 1.2rem;
+  border: 1px solid #334155;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-
-
-.card:hover {
-
-
-transform:translateY(-8px);
-
-border-color:var(--azul);
-
-box-shadow:
-0 15px 35px rgba(56,189,248,.2);
-
-
+.card-link:hover .card {
+  transform: translateY(-5px);
+  border-color: #ff0000;
 }
 
-
-
-
-
-.capa-container {
-
-
-height:190px;
-
-border-radius:15px;
-
-overflow:hidden;
-
-position:relative;
-
-background:black;
-
-}
-
-
-
-.capa-projeto {
-
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-}
-
-
-
-
-
-.play-overlay {
-
-
-position:absolute;
-
-inset:0;
-
-background:rgba(0,0,0,.4);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-}
-
-
-
-.play-overlay span {
-
-
-background:red;
-
-padding:10px 18px;
-
-border-radius:30px;
-
-font-weight:bold;
-
-
-}
-
-
-
-
-.card-body h3 {
-
-
-margin-top:18px;
-
-font-size:1.2rem;
-
-color:white;
-
-
-}
-
-
-
-
-.card-body p {
-
-
-color:var(--texto-secundario);
-
-font-size:.9rem;
-
-margin-top:10px;
-
-line-height:1.5;
-
-
-}
-
-
-
-
-
-/* ================= BOTÕES ================= */
-
-
-.botoes-projeto {
-
-
-display:flex;
-
-gap:10px;
-
-margin:20px 0;
-
-flex-wrap:wrap;
-
-
-}
-
-
-
-.btn-youtube,
-.btn-tutorial {
-
-
-text-decoration:none;
-
-color:white;
-
-padding:10px 18px;
-
-border-radius:25px;
-
-font-weight:bold;
-
-font-size:.85rem;
-
-transition:.3s;
-
-
-}
-
-
-
-.btn-youtube {
-
-
-background:#ff0000;
-
-
-}
-
-
-
-.btn-tutorial {
-
-
-background:#0284c7;
-
-
-}
-
-
-
-.btn-youtube:hover,
-.btn-tutorial:hover {
-
-
-transform:scale(1.08);
-
-opacity:.85;
-
-
-}
-
-
-
-
-
-/* ================= TAG ================= */
-
-
-.card-footer {
-
-
-border-top:1px solid var(--borda);
-
-padding-top:15px;
-
-}
-
-
-
-.tag {
-
-
-background:#0284c7;
-
-padding:5px 12px;
-
-border-radius:20px;
-
-font-size:.75rem;
-
-}
-
-
-
-
-
-/* ================= FOOTER ================= */
-
-
-footer {
-
-
-background:#1e293b;
-
-text-align:center;
-
-padding:25px;
-
-color:#94a3b8;
-
-}
-
-
-
-.footer-content {
-
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-gap:10px;
-
-
-}
-
-
-
-.brasao-footer {
-
-
-width:50px;
-
-
-}
-
-
-
-/* ================= CELULAR ================= */
-
-
-@media(max-width:600px){
-
-
-header h1{
-
-font-size:1.8rem;
-
-}
-
-
-
-.topo-secao{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-}
-
-
-}
-/* Estilo da caixa do vídeo/botão */
 .capa-container {
   width: 100%;
   height: 140px;
@@ -574,6 +51,28 @@ align-items:flex-start;
 .capa-container span {
   font-size: 0.85rem;
   font-weight: bold;
+}
+
+.card-body h3 {
+  color: #f8fafc;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-body p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #334155;
+  padding-top: 0.8rem;
+  margin-top: auto;
 }
 
 .btn-assistir {
