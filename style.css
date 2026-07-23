@@ -1,249 +1,34 @@
-/* ==========================================================================
-   DOM PEDRO II CONECTA - ESTILOS PRINCIPAIS (style.css)
-   Escola Estadual D. Pedro II - Janiópolis/PR
-   ========================================================================== */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-:root {
-  --bg-principal: #0f172a;
-  --bg-card: #1e293b;
-  --texto-principal: #f8fafc;
-  --texto-secundario: #94a3b8;
-  --texto-suave: #64748b;
-  --cor-destaque: #38bdf8;
-  --cor-botao: #0284c7;
-  --borda-card: #334155;
-  --sombreamento: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-}
-
-body {
-  background-color: var(--bg-principal);
-  color: var(--texto-principal);
-  line-height: 1.6;
-  min-height: 100vh;
+.botoes-projeto {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
 }
 
-header {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  padding: 2rem 1rem 2.5rem 1rem;
-  text-align: center;
-  border-bottom: 3px solid var(--cor-destaque);
-  box-shadow: var(--sombreamento);
-}
 
-.logo-container { margin-bottom: 1.5rem; }
-
-.brasao-escola {
-  max-width: 130px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.badge-escola {
-  display: inline-block;
-  background: var(--cor-botao);
-  color: #ffffff;
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 0.35rem 1rem;
-  border-radius: 20px;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
-header h1 {
-  color: var(--cor-destaque);
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-}
-
-header p {
-  color: var(--texto-secundario);
-  font-size: 1rem;
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-.sub-info {
-  margin-top: 1rem;
-  color: var(--texto-suave);
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.container {
-  max-width: 1100px;
-  width: 90%;
-  margin: 2rem auto;
-  flex: 1;
-}
-
-.topo-secao {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.8rem;
-}
-
-.secao-titulo {
-  border-left: 4px solid var(--cor-destaque);
-  padding-left: 0.8rem;
-  font-size: 1.4rem;
-}
-
-.filtros-container { display: flex; gap: 0.5rem; }
-
-.btn-filtro {
-  background: var(--bg-card);
-  border: 1px solid var(--borda-card);
-  color: var(--texto-secundario);
-  padding: 0.4rem 0.9rem;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: all 0.2s;
-}
-
-.btn-filtro:hover, .btn-filtro.ativo {
-  background: var(--cor-botao);
-  color: #fff;
-  border-color: var(--cor-botao);
-}
-
-.grid-projetos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.8rem;
-}
-
-/* Link que envolve todo o Quadradinho (Card) */
-.card-link {
+.btn-youtube,
+.btn-tutorial {
   text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.card {
-  background: var(--bg-card);
-  border-radius: 12px;
-  padding: 1rem;
-  border: 1px solid var(--borda-card);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card-link:hover .card {
-  transform: translateY(-6px);
-  border-color: #ff0000; /* Borda vermelha indicando o YouTube ao passar o mouse */
-  box-shadow: 0 10px 20px -5px rgba(255, 0, 0, 0.2);
-}
-
-.capa-container {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  background-color: #000;
-}
-
-.capa-projeto {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.card-link:hover .capa-projeto {
-  transform: scale(1.05);
-}
-
-.play-overlay {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.9;
-  transition: opacity 0.2s;
-}
-
-.play-overlay span {
-  background: #ff0000;
-  color: #fff;
-  font-weight: bold;
-  font-size: 0.85rem;
-  padding: 0.5rem 1rem;
+  color: white;
+  padding: 8px 14px;
   border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-.card-body h3 {
-  color: var(--texto-principal);
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-}
-
-.card-body p {
-  color: var(--texto-secundario);
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin-bottom: 1rem;
-}
-
-.card-footer {
-  border-top: 1px solid var(--borda-card);
-  padding-top: 0.8rem;
-  margin-top: auto;
-}
-
-.tag {
-  display: inline-block;
-  background: var(--cor-botao);
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.25rem 0.6rem;
-  border-radius: 12px;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: #1e293b;
-  color: var(--texto-suave);
   font-size: 0.85rem;
-  border-top: 1px solid var(--borda-card);
-  margin-top: auto;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
+
+.btn-youtube {
+  background: #ff0000;
 }
 
-.brasao-footer { max-width: 45px; height: auto; }
 
-@media (max-width: 600px) {
-  header h1 { font-size: 1.8rem; }
-  .brasao-escola { max-width: 100px; }
+.btn-tutorial {
+  background: #0284c7;
+}
+
+
+.btn-youtube:hover,
+.btn-tutorial:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
 }
