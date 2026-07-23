@@ -1,307 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Colégio Estadual Dom Pedro II | Janiópolis - PR</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Pedro II Conecta - C.E. Dom Pedro II</title>
+  <!-- Chama o arquivo CSS externo -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- MENU -->
-<header>
+  <header>
+    <!-- Adicionando o brasão no cabeçalho -->
+    <div class="logo-container">
+      <img src="IMG-20260723-WA0006.jpg" alt="Brasão da Escola Estadual D. Pedro II" class="brasao-escola">
+    </div>
+    <span class="badge-escola">Escola Estadual D. Pedro II - E.F.I.</span>
+    <h1>Dom Pedro II Conecta ⚡</h1>
+    <p>Mostra de Projetos de Programação e Robótica dos nossos alunos.</p>
+    <div class="sub-info">
+      Janiópolis - PR | Núcleo Regional de Educação de Goioerê
+    </div>
+  </header>
 
-    <nav class="navbar">
-
-        <div class="logo">
-            <h1>Dom Pedro II</h1>
-            <span>Janiópolis - PR</span>
+  <main class="container">
+    <h2 class="secao-titulo">Projetos em Destaque</h2>
+    
+    <div class="grid-projetos">
+      
+      <div class="card">
+        <div class="card-body">
+          <h3>Carrinho Seguidor de Linha</h3>
+          <p>Projeto de robótica com sensores infravermelhos para navegação autônoma em pistas.</p>
         </div>
+        <div class="card-footer">
+          <span class="tag">Robótica / Arduino</span>
+        </div>
+      </div>
 
+      <div class="card">
+        <div class="card-body">
+          <h3>Automação Residencial</h3>
+          <p>Controle de iluminação e sensores de presença acionados por código e conexão sem fio.</p>
+        </div>
+        <div class="card-footer">
+          <span class="tag">IoT / Programação</span>
+        </div>
+      </div>
 
-        <ul class="menu">
-
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#colegio">O Colégio</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#robotica">Robótica</a></li>
-            <li><a href="#contato">Contato</a></li>
-
-        </ul>
-
-    </nav>
-
-</header>
-
-
-
-<!-- BANNER PRINCIPAL -->
-
-<section id="inicio" class="hero">
-
-
-    <div class="hero-text">
-
-        <h2>
-            Colégio Estadual<br>
-            Dom Pedro II
-        </h2>
-
-
-        <p>
-            Educação, inovação e tecnologia transformando futuros.
-        </p>
-
-
-        <a href="#robotica" class="botao">
-            Conheça nossos projetos
-        </a>
-
+      <div class="card">
+        <div class="card-body">
+          <h3>Braço Robótico Articulado</h3>
+          <p>Montagem física e programação de servomotores para manipulação de pequenos objetos.</p>
+        </div>
+        <div class="card-footer">
+          <span class="tag">Engenharia / Maker</span>
+        </div>
+      </div>
 
     </div>
-
-
-</section>
-
-
-
-
-<!-- SOBRE O COLÉGIO -->
-
-<section id="colegio" class="sobre">
-
-
-<h2>Sobre o Colégio</h2>
-
-
-<p>
-
-O Colégio Estadual Dom Pedro II,
-localizado em Janiópolis - Paraná,
-pertencente ao Núcleo Regional de Educação de Goioerê,
-promove uma educação de qualidade,
-incentivando conhecimento, criatividade,
-protagonismo e inovação.
-
-</p>
-
-
-</section>
-
-
-
-
-
-<!-- PROJETOS -->
-
-<section id="projetos">
-
-
-<h2>Projetos Educacionais</h2>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>📚 Educação</h3>
-
-<p>
-Projetos voltados ao desenvolvimento
-acadêmico e social dos estudantes.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>🌱 Sustentabilidade</h3>
-
-<p>
-Ações envolvendo meio ambiente,
-consciência e responsabilidade.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>🏆 Competições</h3>
-
-<p>
-Participação em olimpíadas,
-feiras e eventos educacionais.
-</p>
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<!-- ROBÓTICA -->
-
-<section id="robotica" class="robotica">
-
-
-<h2>
-🤖 Programação e Robótica
-</h2>
-
-
-<p>
-
-Os estudantes desenvolvem projetos utilizando
-programação, eletrônica e pensamento computacional,
-criando soluções inovadoras.
-
-</p>
-
-
-
-<div class="cards">
-
-
-
-<div class="card">
-
-<h3>🔌 Arduino</h3>
-
-<p>
-
-Projetos com sensores,
-LEDs, motores e automação.
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>💻 Programação</h3>
-
-<p>
-
-Desenvolvimento de jogos,
-sites e aplicações.
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>🧠 Inteligência Artificial</h3>
-
-<p>
-
-Exploração de novas tecnologias
-para aprendizagem.
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>🌎 Projetos Agrinho</h3>
-
-<p>
-
-Tecnologia aplicada à sustentabilidade
-e inovação.
-
-</p>
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- CONTATO -->
-
-<section id="contato">
-
-
-<h2>Contato</h2>
-
-
-<p>
-📍 Janiópolis - Paraná
-</p>
-
-
-<p>
-🏫 Colégio Estadual Dom Pedro II
-</p>
-
-
-<p>
-Núcleo Regional de Educação de Goioerê
-</p>
-
-
-
-</section>
-
-
-
-
-
-
-
-<footer>
-
-
-<p>
-
-© 2026 Colégio Estadual Dom Pedro II -
-Janiópolis - PR
-
-</p>
-
-
-</footer>
-
-
-
-<script src="js/main.js"></script>
-
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <img src="IMG-20260723-WA0006.jpg" alt="Brasão da Escola" class="brasao-footer">
+      <p>Escola Estadual D. Pedro II - E.F.I. — Janiópolis/PR • NRE Goioerê</p>
+    </div>
+  </footer>
 
 </body>
-
 </html>
