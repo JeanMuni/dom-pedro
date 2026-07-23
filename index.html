@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dom Pedro II Conecta - C.E. Dom Pedro II</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Adicionamos ?v=10 aqui para destravar o CSS no navegador -->
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -23,39 +24,9 @@
   <main class="container">
     <div class="topo-secao">
       <h2 class="secao-titulo">Projetos em Destaque</h2>
-      
-      <div class="filtros-container">
-        <button class="btn-filtro ativo">Todos</button>
-        <button class="btn-filtro">Robótica</button>
-        <button class="btn-filtro">IoT</button>
-        <button class="btn-filtro">Maker</button>
-      </div>
     </div>
 
-    <!-- GRID DOS PROJETOS (Colocado direto no HTML para garantir que apareça!) -->
-    <div class="grid-projetos" id="grid-projetos">
-      
-      <!-- QUADRADINHO DO PROJETO 1 -->
-      <a href="https://youtube.com/shorts/Mmzw3JbQkEM" target="_blank" class="card-link">
-        <div class="card">
-          <div class="capa-container">
-            <div class="play-icon">▶</div>
-            <span>Clique para abrir no YouTube</span>
-          </div>
-
-          <div class="card-body">
-            <h3>Matriz de LED 8x8: Como estou me sentindo?</h3>
-            <p>Projeto com matriz de LED 8x8 programado pelos alunos da E.E. D. Pedro II para exibir emojis e expressões.</p>
-          </div>
-
-          <div class="card-footer">
-            <span class="tag">Arduino / SEED-PR</span>
-            <span class="btn-assistir">Ver no YouTube ↗</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
+    <div class="grid-projetos" id="grid-projetos"></div>
   </main>
 
   <footer>
@@ -65,5 +36,6 @@
     </div>
   </footer>
 
+  <script src="script.js?v=10"></script>
 </body>
 </html>

@@ -1,14 +1,108 @@
-/* Estilo do Card Clicável e Caixa de Vídeo */
+/* ==========================================================================
+   DOM PEDRO II CONECTA - ESTILOS PRINCIPAIS (style.css)
+   Escola Estadual D. Pedro II - Janiópolis/PR
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- CABEÇALHO --- */
+header {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  padding: 2rem 1rem 2.5rem 1rem;
+  text-align: center;
+  border-bottom: 3px solid #38bdf8;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+  margin-bottom: 1.5rem;
+}
+
+/* Corrige a imagem gigante da escola no topo */
+.brasao-escola {
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.badge-escola {
+  display: inline-block;
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+header h1 {
+  color: #38bdf8;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 1rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.sub-info {
+  margin-top: 1rem;
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 2rem auto;
+  flex: 1;
+}
+
+.topo-secao {
+  margin-bottom: 1.8rem;
+}
+
+.secao-titulo {
+  border-left: 4px solid #38bdf8;
+  padding-left: 0.8rem;
+  font-size: 1.4rem;
+  color: #f8fafc;
+}
+
+/* --- GRID E CARDS DOS PROJETOS --- */
+.grid-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+
 .card-link {
   text-decoration: none;
   color: inherit;
   display: block;
-}
-
-.grid-projetos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.8rem;
 }
 
 .card {
@@ -16,7 +110,7 @@
   border-radius: 12px;
   padding: 1.2rem;
   border: 1px solid #334155;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -26,11 +120,13 @@
 .card-link:hover .card {
   transform: translateY(-5px);
   border-color: #ff0000;
+  box-shadow: 0 10px 20px -5px rgba(255, 0, 0, 0.2);
 }
 
+/* Caixa de destaque do YouTube no Card */
 .capa-container {
   width: 100%;
-  height: 140px;
+  height: 160px;
   background: #000000;
   border-radius: 8px;
   display: flex;
@@ -44,7 +140,7 @@
 }
 
 .play-icon {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #ff0000;
 }
 
@@ -75,8 +171,48 @@
   margin-top: auto;
 }
 
+.tag {
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+}
+
 .btn-assistir {
   color: #ff4d4d;
   font-weight: bold;
   font-size: 0.85rem;
+}
+
+/* --- RODAPÉ --- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #1e293b;
+  color: #64748b;
+  font-size: 0.85rem;
+  border-top: 1px solid #334155;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Corrige a imagem gigante do rodapé */
+.brasao-footer {
+  max-width: 50px;
+  height: auto;
+  display: block;
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 600px) {
+  header h1 { font-size: 1.8rem; }
+  .brasao-escola { max-width: 90px; }
 }
